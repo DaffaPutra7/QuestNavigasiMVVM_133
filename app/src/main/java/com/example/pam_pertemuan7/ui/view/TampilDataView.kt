@@ -26,6 +26,9 @@ fun TampilDataView(uiState: DataSiswa, onBackButton: () -> Unit){
         TampilData(param = "Email", argu = uiState.email )
         TampilData(param = "No.Telepon", argu = uiState.notelepon )
 
+        //Tambahan
+        TampilData(param = "NIM", argu = uiState.nim)
+
         Button(onClick = onBackButton) {
             Text(text = "Kembali")
         }
