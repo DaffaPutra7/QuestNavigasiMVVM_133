@@ -48,6 +48,14 @@ fun Navigasi(
                     }
                 )
             }
+            composable(route = Halaman.TAMPILDATA.name){
+                TampilDataView(
+                  uiState = uiState,
+                    onBackButton = {
+                        navHost.popBackStack()
+                    }
+                )
+            }
         }
     }
 }
