@@ -6,5 +6,7 @@ data class DataSiswa(
     val alamat: String = "",
     val email: String = "",
     val notelepon: String = "",
+
+    //Tambahan
     val nim: String = ""
 )

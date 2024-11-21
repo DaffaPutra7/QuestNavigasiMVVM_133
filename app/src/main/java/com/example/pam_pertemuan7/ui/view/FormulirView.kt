@@ -34,6 +34,9 @@ fun FormulirView(
     var notelepon by remember { mutableStateOf("") }
     var gender by remember { mutableStateOf("") }
 
+    //Tambahan
+    var nim by remember { mutableStateOf("") }
+
     val listData: MutableList<String> = mutableListOf(nama, gender, alamat, email, notelepon)
 
     Column (
@@ -96,6 +99,21 @@ fun FormulirView(
             modifier = Modifier.fillMaxWidth().padding(5.dp),
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number)
         )
+
+        //Tambahan
+        TextField(
+            value = nim,
+            onValueChange = {nim = it},
+            label = {
+                Text(text = "NIM")
+            },
+            placeholder = {
+                Text(text = "Isi Nomor Induk Mahasiswa Anda")
+            },
+            modifier = Modifier.fillMaxWidth().padding(5.dp),
+            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number)
+        )
+
         Button(onClick = {
             onSubmitClicked(listData)
         }) {
