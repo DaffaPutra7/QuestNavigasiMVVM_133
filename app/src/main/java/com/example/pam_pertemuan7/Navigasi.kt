@@ -34,7 +34,20 @@ fun Navigasi(
             modifier = modifier.padding(isipadding),
             navController = navHost, startDestination = Halaman.FORMULIR.name
         ) {
+            composable(route = Halaman.FORMULIR.name) {
+                val konteks = LocalContext.current
+                FormulirView(
 
+                    // DI bawah ini merupakan parameter dari halam FormulirView
+                    listJK = JenisKelamin.map { // JenisKelamin diambil dari Object JenisKelamin.kt
+                        id -> konteks.getString(id)
+                    },
+                    onSubmitClicked = {
+                        viewModel.setDataSiswa(it) // setDataSiswa diambil dari Class SiswaViewModel.kt
+                        navHost.navigate(Halaman.TAMPILDATA.name)
+                    }
+                )
+            }
         }
     }
 }
